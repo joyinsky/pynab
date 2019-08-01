@@ -17,7 +17,7 @@ class AccountType(Enum):
     SAVINGS = 'Savings'
     CREDIT_CARD = 'CreditCard'
     CASH = 'Cash'
-    LINE_OF_CREDIT = 'LineOfCredit'
+    LINE_OF_CREDIT = 'LineofCredit'
     PAYPAL = 'Paypal'
     MERCHANT_ACCOUNT = 'MerchantAccount'
     INVESTMENT_ACCOUNT = 'InvestmentAccount'
@@ -119,6 +119,10 @@ class Account(Model):
     @property
     def note(self):
         return self._entity.note
+
+    @property
+    def sortable_index(self):
+        return self._entity.sortableIndex
 
 
 class Payee(Model):
