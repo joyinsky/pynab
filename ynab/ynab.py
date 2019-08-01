@@ -76,7 +76,7 @@ class YNAB(object):
                 raise RuntimeError('No device {!r} for {!r} at: {}'.format(device, budget, path))
         self._path = device['file']
         self._device = device['name']
-        with open(self._path, 'r') as f:
+        with open(self._path, 'r', encoding="utf8") as f:
             self._init_data(json.load(f))
 
     @property
